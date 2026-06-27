@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+/* ============================================================
+   Liwanag — "light / clarity". A public ledger that brings
+   charity money into the light. Warm paper + ink + amber.
+   ============================================================ */
+@theme {
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-fraunces);
+
+  /* Surfaces */
+  --color-paper: oklch(98.4% 0.007 85);
+  --color-background: oklch(98.4% 0.007 85);
+  --color-card: oklch(100% 0 0);
+  --color-ink: oklch(24% 0.018 70);
+  --color-foreground: oklch(26% 0.02 70);
+  --color-muted: oklch(52% 0.015 75);
+  --color-line: oklch(90% 0.012 80);
+
+  /* Brand: amber light */
+  --color-primary: oklch(64% 0.135 62);
+  --color-primary-foreground: oklch(99% 0.01 80);
+  --color-glow: oklch(83% 0.13 78);
+
+  /* Verified on-chain: emerald */
+  --color-verify: oklch(56% 0.12 162);
+  --color-verify-soft: oklch(95% 0.04 162);
+
+  --radius-card: 1rem;
+}
+
+html {
+  background: var(--color-paper);
+}
+
+body {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  color: var(--color-foreground);
+  background:
+    radial-gradient(60rem 40rem at 100% -10%, oklch(95% 0.05 80 / 0.7), transparent 60%),
+    var(--color-paper);
+}
+
+.font-display {
+  font-family: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  font-optical-sizing: auto;
+  letter-spacing: -0.01em;
+}
+
+/* Hairline-ledger card */
+.l-card {
+  background: var(--color-card);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-card);
+}
+
+/* Primary CTA */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--color-primary);
+  color: var(--color-primary-foreground);
+  font-weight: 600;
+  border-radius: 0.75rem;
+  transition: filter 0.15s ease, transform 0.05s ease;
+  box-shadow: 0 1px 0 oklch(50% 0.1 60 / 0.25), 0 8px 24px -12px oklch(64% 0.135 62 / 0.7);
+}
+.btn-primary:hover { filter: brightness(1.06); }
+.btn-primary:active { transform: translateY(1px); }
+.btn-primary:disabled { opacity: 0.5; box-shadow: none; cursor: not-allowed; }
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: var(--color-ink);
+  font-weight: 600;
+  border: 1px solid var(--color-line);
+  border-radius: 0.75rem;
+  transition: background 0.15s ease;
+}
+.btn-ghost:hover { background: oklch(96% 0.01 80); }
+.btn-ghost:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.field {
+  width: 100%;
+  background: var(--color-card);
+  border: 1px solid var(--color-line);
+  border-radius: 0.75rem;
+  padding: 0.75rem 0.9rem;
+  font-size: 0.95rem;
+  color: var(--color-ink);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.field:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px oklch(64% 0.135 62 / 0.15);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+}
+
+.mono {
+  font-family: ui-monospace, "SF Mono", "Menlo", monospace;
+}
+
+@keyframes ledger-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+.live-dot { animation: ledger-pulse 1.6s ease-in-out infinite; }
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.rise { animation: rise 0.4s ease-out both; }
