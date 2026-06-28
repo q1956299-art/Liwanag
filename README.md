@@ -69,6 +69,21 @@ hashes are in [`contracts/DEPLOYMENT.md`](./contracts/DEPLOYMENT.md).
 - **Honest stats.** [`/stats`](https://liwanag-rho.vercel.app/stats) counts real wallet sessions and
   real entities (campaigns, donations, payouts) from the live database.
 
+## Live stats
+
+![Live stats](screen-shot/stats.jpg)
+
+Real interaction counts from the live database. Nothing is seeded — every figure reflects an actual wallet session or an on-chain transaction. Any configured demo keys are excluded.
+
+| metric | value |
+|---|---|
+| Total raised (XLM donations) | 120 XLM |
+| Donor wallets | 58 |
+| Wallet sessions | 82 |
+| Campaigns | 10 |
+| Donations | 8 |
+| On-chain payouts | 4 |
+
 ## Screenshots
 
 All captured from the live deployment during the end-to-end test run.
