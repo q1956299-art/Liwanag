@@ -36,6 +36,13 @@ click through to Stellar Expert and check the math themselves.
    payout transfers to the recipient **and** appends a `SpendRecord` (recipient, amount, memo hash,
    ledger) to the public spend ledger that can never be edited.
 
+---
+## Demo & Pitch Deck
+
+- **Demo Video:** [Watch Demo](https://drive.google.com/file/d/1TtIh2FBZH-pbVvP8T3QPxp3BFzXABWO0/view?usp=drive_link)
+- **Pitch Deck:** [View Pitch Deck](https://drive.google.com/file/d/1mdc57SoMKcnex5FeaZWcVhLpSAv7yiCp/view?usp=drive_link)
+---
+
 ## The smart contract
 
 The core is a Soroban contract, `charity-campaign` (`contracts/`), deployed to testnet:
