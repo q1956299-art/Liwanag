@@ -18,3 +18,17 @@ yarn-error.log*
 next-env.d.ts
 playwright-report/
 test-results/
+
+.env
+.env.local
+.env.prod
+.env.*.local
+*.bak
+*.testnet.bak
+contracts/target/
+node_modules/
+.next/
+.vercel/
+
+.vercel
+.env*

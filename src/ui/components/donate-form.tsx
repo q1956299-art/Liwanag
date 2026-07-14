@@ -80,7 +80,7 @@ export function DonateForm({ campaignId, campaignName, asset: campaignAsset, con
           {amount} {asset} is now part of this campaign’s public ledger.
         </p>
         <a
-          href={`https://stellar.expert/explorer/testnet/tx/${result.txHash}`}
+          href={`https://stellar.expert/explorer/mainnet/tx/${result.txHash}`}
           target="_blank"
           rel="noopener noreferrer"
           className="mono mt-4 inline-flex items-center gap-1.5 break-all rounded-lg bg-[oklch(96%_0.01_80)] px-3 py-2 text-xs text-[var(--color-primary)] hover:underline"
@@ -203,7 +203,7 @@ export function DonateForm({ campaignId, campaignName, asset: campaignAsset, con
             : 'Connect wallet to donate'}
       </button>
       <p className="text-center text-xs text-[var(--color-muted)]">
-        You’ll review and sign the payment in Freighter. Network is pinned to Stellar testnet.
+        You’ll review and sign the payment in Freighter. Network is pinned to Stellar mainnet.
       </p>
     </form>
   );

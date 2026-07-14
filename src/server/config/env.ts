@@ -9,12 +9,12 @@ export const env = {
   SESSION_SECRET: getEnv('SESSION_SECRET', 'dev-secret-key-change-in-production-32chars'),
   STELLAR_SIGNING_SECRET: process.env.STELLAR_SIGNING_SECRET ?? '',
   STELLAR_NETWORK: getEnv('STELLAR_NETWORK', 'testnet'),
-  STELLAR_HORIZON_URL: getEnv('STELLAR_HORIZON_URL', 'https://horizon-testnet.stellar.org'),
+  STELLAR_HORIZON_URL: getEnv('STELLAR_HORIZON_URL', 'https://horizon.stellar.org'),
   STELLAR_NETWORK_PASSPHRASE: getEnv(
     'STELLAR_NETWORK_PASSPHRASE',
     'Test SDF Network ; September 2015',
   ),
-  SOROBAN_RPC_URL: getEnv('SOROBAN_RPC_URL', 'https://soroban-testnet.stellar.org'),
+  SOROBAN_RPC_URL: getEnv('SOROBAN_RPC_URL', 'https://soroban-rpc.creit.tech'),
   // CharityCampaign Soroban contract — custodies donations & holds the on-chain spend ledger.
   CHARITY_CONTRACT_ID: getEnv(
     'CHARITY_CONTRACT_ID',
@@ -35,7 +35,7 @@ export const env = {
 
 export const publicEnv = {
   NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3001',
-  NEXT_PUBLIC_STELLAR_NETWORK: process.env.NEXT_PUBLIC_STELLAR_NETWORK ?? 'testnet',
+  NEXT_PUBLIC_STELLAR_NETWORK: process.env.NEXT_PUBLIC_STELLAR_NETWORK ?? 'public',
   NEXT_PUBLIC_USDC_ISSUER:
     process.env.NEXT_PUBLIC_USDC_ISSUER ??
     'GBBD47IF6LWK7P7MDEVSCWR7DPUWV3NY3DTQEVFL4NAT4AQH3ZLLFLA5',

@@ -8,7 +8,7 @@ import {
   signTransaction,
 } from '@stellar/freighter-api';
 
-const NETWORK = process.env.NEXT_PUBLIC_STELLAR_NETWORK ?? 'testnet';
+const NETWORK = process.env.NEXT_PUBLIC_STELLAR_NETWORK ?? 'public';
 
 export const APP_NETWORK_PASSPHRASE =
   NETWORK === 'public'

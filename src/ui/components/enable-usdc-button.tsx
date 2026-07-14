@@ -34,7 +34,7 @@ export function EnableUsdcButton({ onDone }: { onDone?: () => void }) {
       const sub = await subRes.json();
       if (!subRes.ok) throw new Error(sub.error ?? 'Could not submit trustline');
 
-      toast.success('USDC enabled', { description: 'Your wallet now trusts the testnet USDC asset.' });
+      toast.success('USDC enabled', { description: 'Your wallet now trusts the mainnet USDC asset.' });
       onDone?.();
     } catch (err) {
       const msg = err instanceof Error ? err.message : 'Failed to enable USDC';

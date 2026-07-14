@@ -1,5 +1,13 @@
 # Liwanag
 
+## 🌐 Mainnet (LIVE)
+
+- **Live app:** https://liwanag-stellar.vercel.app
+- **Network:** Stellar public (mainnet)
+- **Soroban contract:** `CCYGCJKHCPTDWOIOVXLW2NNSPOJGUJMAAF7AMIWSPXIJ5PZVXERHZG2V`
+- **Explorer:** https://stellar.expert/explorer/public/contract/CCYGCJKHCPTDWOIOVXLW2NNSPOJGUJMAAF7AMIWSPXIJ5PZVXERHZG2V
+
+
 **Charity money, brought to the light.**
 
 Liwanag (Filipino for *light / clarity*) is a public, on-chain transparency board for charity
@@ -35,13 +43,6 @@ click through to Stellar Expert and check the math themselves.
 4. **Follow every payout.** The organizer disburses from the contract on-chain (`disburse`). Each
    payout transfers to the recipient **and** appends a `SpendRecord` (recipient, amount, memo hash,
    ledger) to the public spend ledger that can never be edited.
-
----
-## Demo & Pitch Deck
-
-- **Demo Video:** [Watch Demo](https://drive.google.com/file/d/1TtIh2FBZH-pbVvP8T3QPxp3BFzXABWO0/view?usp=drive_link)
-- **Pitch Deck:** [View Pitch Deck](https://drive.google.com/file/d/1mdc57SoMKcnex5FeaZWcVhLpSAv7yiCp/view?usp=drive_link)
----
 
 ## The smart contract
 

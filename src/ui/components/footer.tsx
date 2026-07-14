@@ -10,7 +10,7 @@ export function Footer() {
           <div className="text-sm">
             <div className="font-display font-semibold text-[var(--color-ink)]">Liwanag</div>
             <div className="text-xs text-[var(--color-muted)]">
-              Charity money, brought to light · Stellar testnet
+              Charity money, brought to light · Stellar mainnet
             </div>
           </div>
         </div>
