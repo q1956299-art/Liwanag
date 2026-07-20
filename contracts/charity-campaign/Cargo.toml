@@ -1,0 +1,17 @@
+[package]
+name = "charity-campaign"
+version = "0.1.0"
+edition = "2021"
+publish = false
+license = "MIT"
+description = "Soroban charity-campaign contract: organizers open a goal, donors fund it on-chain (per-donor + total tracked), and the organizer disburses to recipients while every payout is appended to an immutable on-chain spend ledger. Powers the Liwanag transparency board."
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+doctest = false
+
+[dependencies]
+soroban-sdk = "22"
+
+[dev-dependencies]
+soroban-sdk = { version = "22", features = ["testutils"] }
