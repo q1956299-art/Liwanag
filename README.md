@@ -22,7 +22,7 @@
 
 Submit your GitHub repository link below before the monthly deadline:
 
-**https://github.com/your-org/Liwanag**
+**https://github.com/q1956299-art/Liwanag**
 
 <details>
 <summary>Current evidence totals</summary>
@@ -274,9 +274,9 @@ PLAYWRIGHT_BASE_URL="https://liwanag-rho.vercel.app" \
 | `SESSION_SECRET` | HMAC key for session cookies (32+ chars) |
 | `STELLAR_SIGNING_SECRET` | Testnet secret key for the SEP-10 challenge server account |
 | `STELLAR_NETWORK` / `NEXT_PUBLIC_STELLAR_NETWORK` | `testnet` |
-| `STELLAR_HORIZON_URL` | `https://horizon-testnet.stellar.org` |
+| `STELLAR_HORIZON_URL` | ` |
 | `STELLAR_NETWORK_PASSPHRASE` | `Test SDF Network ; September 2015` |
-| `SOROBAN_RPC_URL` | `https://soroban-testnet.stellar.org` |
+| `SOROBAN_RPC_URL` | ` |
 | `CHARITY_CONTRACT_ID` / `NEXT_PUBLIC_CHARITY_CONTRACT_ID` | Deployed CharityCampaign contract id |
 | `XLM_SAC_CONTRACT_ID` | Native XLM Stellar Asset Contract (default campaign token) |
 | `NEXT_PUBLIC_USDC_ISSUER` | Testnet USDC issuer |
