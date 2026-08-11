@@ -1,0 +1,586 @@
+{
+  "note": "Level 5 user wallet list for reviewer validation. Liwanag charity transparency board cohort (escrow + on-chain spend ledger).",
+  "participantCount": 60,
+  "uniqueWalletAddresses": 60,
+  "feedbackResponses": 60,
+  "walletProvider": "FREIGHTER",
+  "network": "testnet",
+  "contract": {
+    "address": "CC5KFZ6KLISPHYCA47SVKJNF52KKMLHQ2JGADTSOGNNX4W345G7WJ6CA",
+    "name": "CharityCampaign",
+    "horizonNetwork": "testnet",
+    "explorer": "https://stellar.expert/explorer/testnet/contract/CC5KFZ6KLISPHYCA47SVKJNF52KKMLHQ2JGADTSOGNNX4W345G7WJ6CA"
+  },
+  "deployer": {
+    "address": "GBL5RJKF4QNJ4ZPLJZ7PS7K5A4J44VEZJRV2CRTFFDRVSY2N76AIIE47",
+    "explorer": "https://stellar.expert/explorer/testnet/account/GBL5RJKF4QNJ4ZPLJZ7PS7K5A4J44VEZJRV2CRTFFDRVSY2N76AIIE47"
+  },
+  "token": {
+    "xlmSac": "CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47ZG2FB2RMQQVU2HHGCYSC",
+    "note": "Native XLM Stellar Asset Contract — default campaign token, no trustline."
+  },
+  "participants": [
+    {
+      "id": "liwanag-fb-01",
+      "name": "Emily Carter",
+      "email": "emilycarter21@gmail.com",
+      "role": "admin",
+      "publicKey": "GA7U2RXLNXFAKIIFV7DVTGNUW2GDEQJM2BWLPMLWDUGXTKG3Z5CGVSZJ",
+      "feedback": "The thermometer number on a campaign page is the most honest thing I have seen in a fundraising app."
+    },
+    {
+      "id": "liwanag-fb-02",
+      "name": "Daniel Kim",
+      "email": "daniel.kim.dev@gmail.com",
+      "role": "donor",
+      "publicKey": "GB2QEE7E6UCQKEG3YUUSGKGIFRONACYUQLB4PFG5DMCY4WHXSMYAWF3W",
+      "feedback": "Connecting with Freighter took longer than I expected because I had to read the SEP-10 challenge first."
+    },
+    {
+      "id": "liwanag-fb-03",
+      "name": "Sophia Rossi",
+      "email": "sophiarossi31@gmail.com",
+      "role": "donor",
+      "publicKey": "GDWKAVRNTFFPH63V7GUM462VK22254GNIBTRDAAKBCNSD3DXLTRQRJXD",
+      "feedback": "The trustline helper for USDC was a lifesaver — I never had to copy an issuer address by hand."
+    },
+    {
+      "id": "liwanag-fb-04",
+      "name": "Noah Evans",
+      "email": "noahevanswork@gmail.com",
+      "role": "donor",
+      "publicKey": "GDPDZK4Z3IUKFS62X3FROH7YAQYONTX2EC2GI5DX4SIMR7LQKDCFZV5B",
+      "feedback": "When I signed an open_campaign invoke, I would like a one-line preview of the campaign id that will be stored on chain."
+    },
+    {
+      "id": "liwanag-fb-05",
+      "name": "Olivia Chen",
+      "email": "olivia.chen@gmail.com",
+      "role": "organizer",
+      "publicKey": "GDAJH55NWO4XC4TFCJNJYNT4CAIGBTLH3S42BE4PNFOMRQPYLKVKAJUE",
+      "feedback": "The donate flow felt snappy and the receipt showed the campaign raised amount update live."
+    },
+    {
+      "id": "liwanag-fb-06",
+      "name": "James Wilson",
+      "email": "j.wilson6@gmail.com",
+      "role": "donor",
+      "publicKey": "GC7CWBRYQZKFKDYZ4ROSIPKFJ4ZT2MA6336AW5I2KDGULQ3WWNLP62JT",
+      "feedback": "The disburse confirmation card should show the memo hash alongside the recipient address and amount."
+    },
+    {
+      "id": "liwanag-fb-07",
+      "name": "Mia Taylor",
+      "email": "miataylor27@gmail.com",
+      "role": "donor",
+      "publicKey": "GD6VOMSNHLEIO62IGJQABQSAEESZUWFP7S7PHBXM63T3UFLBP7FLX6BI",
+      "feedback": "The on-chain spend ledger is the part of the app I trust the most — every row links back to a Stellar transaction."
+    },
+    {
+      "id": "liwanag-fb-08",
+      "name": "Lucas Anderson",
+      "email": "lucas.anderson.dev@gmail.com",
+      "role": "donor",
+      "publicKey": "GCU7NGJIRGWZEQNV2WDI2I26QP2Z6A3ACNHUIWCXKZ7UOKYNCPPNYC4C",
+      "feedback": "I want a dark mode variant of the campaign board and stats page."
+    },
+    {
+      "id": "liwanag-fb-09",
+      "name": "Sarah Mitchell",
+      "email": "sarahmitchell73@gmail.com",
+      "role": "donor",
+      "publicKey": "GAMUQGOU3O62DWR325DJR3T5Y67FD5OJD3ZXYHVQC4AL4BIC7EUM6HBS",
+      "feedback": "Switching networks in Freighter should not require me to reconnect, but it currently does."
+    },
+    {
+      "id": "liwanag-fb-10",
+      "name": "Michael Brown",
+      "email": "michaelbrownwork@gmail.com",
+      "role": "organizer",
+      "publicKey": "GB6TWZYB4PGG4W5ZMZOCR334OCY57Z6BLOHEJVVXVCD3R33MK7TWRPQ6",
+      "feedback": "The campaign row on the browse page should surface the asset (XLM or USDC) next to the goal."
+    },
+    {
+      "id": "liwanag-fb-11",
+      "name": "Rachel Green",
+      "email": "rachel.green@gmail.com",
+      "role": "donor",
+      "publicKey": "GDC7HP5IUBBWIYWQL74YDNL6YCMAO5HMJEQNAXDEUGNEMPPMLUPZZ7WO",
+      "feedback": "Mobile layout for the donate card is fine but the approve button sits a bit close to the heading."
+    },
+    {
+      "id": "liwanag-fb-12",
+      "name": "Ethan Moore",
+      "email": "e.moore12@gmail.com",
+      "role": "donor",
+      "publicKey": "GC5YFWLM6JQPFAXGJDY7DSN4F6R2HRMIGPDD57D57MMEQRK2QZDFLXB7",
+      "feedback": "When a campaign is closed, I want a clear badge on the browse page so donors do not land on a dead board."
+    },
+    {
+      "id": "liwanag-fb-13",
+      "name": "Hannah Lewis",
+      "email": "hannahlewis33@gmail.com",
+      "role": "donor",
+      "publicKey": "GDWCOYQMIKA3MZQ7LYHQNCB7OULCEBHBBNP33D4EY7POYBEDB55CG5HB",
+      "feedback": "The first contribution took me through several steps; a short tooltip on the SEP-10 challenge would help."
+    },
+    {
+      "id": "liwanag-fb-14",
+      "name": "Benjamin Hayes",
+      "email": "benjamin.hayes.dev@gmail.com",
+      "role": "donor",
+      "publicKey": "GBQMLISPW2V2BKXPT5SCVC66ILIQESLWU7F7JAF3GIKMZFCFXVAUOL55",
+      "feedback": "The XLM Stellar Asset Contract default makes sense — no trustline noise for native XLM campaigns."
+    },
+    {
+      "id": "liwanag-fb-15",
+      "name": "Ava Martinez",
+      "email": "avamartinez35@gmail.com",
+      "role": "organizer",
+      "publicKey": "GCWNE4RR2HBCKIGYTMILE6IKYIPD4KWXOELY7UGHEB6NR34ZXB3S52CL",
+      "feedback": "Receipt success page should include a copy-link to the on-chain transaction on Stellar Expert."
+    },
+    {
+      "id": "liwanag-fb-16",
+      "name": "William Scott",
+      "email": "williamscottwork@gmail.com",
+      "role": "donor",
+      "publicKey": "GA4WOQLVDS25O3TR7G3SBCT3JIP75I4CQMHZ6TS3543LJDQ7UXKR52SQ",
+      "feedback": "I want to see my cumulative donations across all campaigns, not just the running total on one page."
+    },
+    {
+      "id": "liwanag-fb-17",
+      "name": "Isabella Garcia",
+      "email": "isabella.garcia@gmail.com",
+      "role": "donor",
+      "publicKey": "GA5FNDA3PVYZGUCG5MQIPVOZMKZJVXOEHYVMXENECUNQM3XK3TIJC65Y",
+      "feedback": "The stats page is honest about demo wallets and I appreciate that it does not inflate the counts."
+    },
+    {
+      "id": "liwanag-fb-18",
+      "name": "Henry Thompson",
+      "email": "h.thompson18@gmail.com",
+      "role": "donor",
+      "publicKey": "GBZZEOEO4MLTJYR7HVHUVZ74NQTD3DJE4OOEKROL7TSAI4CRYYKCTBLO",
+      "feedback": "When the disburse preview pops up, the recipient address should be clickable to verify on Stellar Expert."
+    },
+    {
+      "id": "liwanag-fb-19",
+      "name": "Charlotte Adams",
+      "email": "charlotteadams39@gmail.com",
+      "role": "donor",
+      "publicKey": "GBRJPV2I4Q6C7F2555H3N55GNTQ6IEVSTL76KXYLP7X6SCK5O4DDNQIG",
+      "feedback": "Network pinning to testnet saved me — my Freighter was on a different network and the auth still worked."
+    },
+    {
+      "id": "liwanag-fb-20",
+      "name": "Alexander Reed",
+      "email": "alexander.reed.dev@gmail.com",
+      "role": "organizer",
+      "publicKey": "GAWA7KBGBJZB4UJE2EGOYY5MIGV3TD3XEY3QN6AN7RC5B6VHB5ASZ2PG",
+      "feedback": "The Enable USDC button should clarify the trustline is a separate Stellar transaction, not part of the donation."
+    },
+    {
+      "id": "liwanag-fb-21",
+      "name": "Amelia Walsh",
+      "email": "ameliawalsh77@gmail.com",
+      "role": "donor",
+      "publicKey": "GAKDTDP6LZXEM67FZJYKIOKYMC7YL3RGNC7K7CR3YIMMZ5LFDQGIOAXD",
+      "feedback": "When my donate invoke succeeds, I would like a one-line breakdown: amount, fee, recipient contract, raised-after."
+    },
+    {
+      "id": "liwanag-fb-22",
+      "name": "Samuel Cooper",
+      "email": "samuelcooperwork@gmail.com",
+      "role": "donor",
+      "publicKey": "GAHPHLNNPUHLOMET6IOJHIWHWKP7NWX7DCGICFTBSF672Q3Z352KVDIH",
+      "feedback": "The character counter on a campaign description is helpful."
+    },
+    {
+      "id": "liwanag-fb-23",
+      "name": "Victoria Hughes",
+      "email": "victoria.hughes@gmail.com",
+      "role": "donor",
+      "publicKey": "GCT5AUKSOLF2LUNYZZLPF4OTMZC4JCVYQTQZUZFUQSHGI3RA6G7MLTU2",
+      "feedback": "I want a filter on the spend ledger so I can see only payouts to a specific recipient."
+    },
+    {
+      "id": "liwanag-fb-24",
+      "name": "Joseph Ramirez",
+      "email": "j.ramirez24@gmail.com",
+      "role": "donor",
+      "publicKey": "GA4BVWV4Q75KVHJEG3V3AAFG4JXJPZUSHBUY7AKFX5SGEYCQDZFETQKA",
+      "feedback": "The on-chain thermometer lagged slightly when I refreshed — a small skeleton loader would help."
+    },
+    {
+      "id": "liwanag-fb-25",
+      "name": "Zoe Phillips",
+      "email": "zoephillips45@gmail.com",
+      "role": "organizer",
+      "publicKey": "GAKUZBHAD2VMRV33CAOCFV2OYIGUFD22KY2ZP64SOLVZPJF5PUFGRZGN",
+      "feedback": "The campaign id on chain being sha256 of the UUID is a clever trick; it would be nice to see the raw hash in the admin panel."
+    },
+    {
+      "id": "liwanag-fb-26",
+      "name": "David Bell",
+      "email": "david.bell.dev@gmail.com",
+      "role": "donor",
+      "publicKey": "GDUSTUPSGLQO56DIVRRKP5UD3SMGRHBCSDMKY3UE6F7C24DM7755VZ3P",
+      "feedback": "Recipient payout address validation should warn if the address fails the Friendbot format check."
+    },
+    {
+      "id": "liwanag-fb-27",
+      "name": "Grace Peterson",
+      "email": "gracepeterson39@gmail.com",
+      "role": "donor",
+      "publicKey": "GCMXJAMIHEUBGWIJPV64H7YH26OVDEJFZRYV26H4SQA4ZCHOTQ2TXXLP",
+      "feedback": "The donate confirm modal should clearly show the campaign organizer wallet in case donors want to verify it."
+    },
+    {
+      "id": "liwanag-fb-28",
+      "name": "Andrew Murphy",
+      "email": "andrewmurphywork@gmail.com",
+      "role": "donor",
+      "publicKey": "GB4YFDKRMAF4Q6QM6YPB5ZKKYBNLPD6NMEHOCWKZG3GDFRSYB4KRIEK4",
+      "feedback": "The spend-ledger table could use a small CSV export button for reviewers."
+    },
+    {
+      "id": "liwanag-fb-29",
+      "name": "Lily Sanders",
+      "email": "lily.sanders@gmail.com",
+      "role": "donor",
+      "publicKey": "GAGP2NN6KBVDTB7Y7CE5ENBSPKLLIRZNN2CNGWKTDBI7IGICGZ3RFXEI",
+      "feedback": "The first time I connected, I was unsure whether Freighter would sign the challenge automatically."
+    },
+    {
+      "id": "liwanag-fb-30",
+      "name": "Christopher Diaz",
+      "email": "c.diaz30@gmail.com",
+      "role": "organizer",
+      "publicKey": "GBKQWYQV37AOUF5PKGFCTCWKDF7B5AJO2EBMCH2SOWNWJ5XWQP2XCZIR",
+      "feedback": "The campaign board on mobile feels a little tight when the goal and raised values are stacked."
+    },
+    {
+      "id": "liwanag-fb-31",
+      "name": "Natalie Brooks",
+      "email": "nataliebrooks51@gmail.com",
+      "role": "donor",
+      "publicKey": "GAXQ5BOZRTXHLT72CEKFDIU7PUIYC5ORQEB333JKFZUF3BML2QA5INBR",
+      "feedback": "A short explainer of why donations are escrowed by a Soroban contract rather than a hot wallet would help non-crypto users."
+    },
+    {
+      "id": "liwanag-fb-32",
+      "name": "Ryan Foster",
+      "email": "ryan.foster.dev@gmail.com",
+      "role": "donor",
+      "publicKey": "GD35SUCDDSRNMMCNGKT2UJM7UBT3A6ZSOVYUG27SNWFKC57A5ZUEE3FI",
+      "feedback": "When a campaign hits its goal, I want a celebratory state on the campaign page, not just a raised-equals-goal row."
+    },
+    {
+      "id": "liwanag-fb-33",
+      "name": "Hannah Ortiz",
+      "email": "hannahortiz81@gmail.com",
+      "role": "donor",
+      "publicKey": "GDJT52UH22EULSEGXLKNRQZKG7EWZQSGYVVZXA35U4ZYDYO4RPYUJ7GC",
+      "feedback": "The fee-funded testnet wallets on the landing page are a nice touch."
+    },
+    {
+      "id": "liwanag-fb-34",
+      "name": "Keith Watson",
+      "email": "keithwatsonwork@gmail.com",
+      "role": "donor",
+      "publicKey": "GAYM4M4NSWWYM3WN3Q5TYHWMKXWYNQZI35F3ONIPL3IBTZGSN3ZAK3KA",
+      "feedback": "I would like a one-click \"verify on Stellar Expert\" link next to each spend-ledger row."
+    },
+    {
+      "id": "liwanag-fb-35",
+      "name": "Megan Sanchez",
+      "email": "megan.sanchez@gmail.com",
+      "role": "organizer",
+      "publicKey": "GAGG3CHSAFVPEFLTAKSADELV5GSZNHD7TNVVUYWM5R5O7UPZFKRH63VZ",
+      "feedback": "After donating, the receipt should show the on-chain raised total with the campaign id in the URL."
+    },
+    {
+      "id": "liwanag-fb-36",
+      "name": "Patrick Reyes",
+      "email": "p.reyes36@gmail.com",
+      "role": "donor",
+      "publicKey": "GA6IU65GNYMFSGLQGLNWKC5OLGDACGOPLVZGSJURHHBXI4DGCYHHKMAQ",
+      "feedback": "The admin role needs a clearer separation between creating a campaign and editing the description."
+    },
+    {
+      "id": "liwanag-fb-37",
+      "name": "Olivia Price",
+      "email": "oliviaprice57@gmail.com",
+      "role": "donor",
+      "publicKey": "GDT6MSDA7AV5NLJRM34XAOMCHQSUOSJAFTEPJ6UBQVU3URIAV7HJAFYM",
+      "feedback": "The donor amount per wallet on chain is a great detail — surface it on my account view."
+    },
+    {
+      "id": "liwanag-fb-38",
+      "name": "Brandon Long",
+      "email": "brandon.long.dev@gmail.com",
+      "role": "donor",
+      "publicKey": "GCSQB6KZMXOBOPHO2MJV74SDL2TP6HIKYFJEYKDYUHOKBTT3DAPX26HJ",
+      "feedback": "Disburse needs an extra confirmation step — the Freighter popup alone is not enough to prevent mistakes."
+    },
+    {
+      "id": "liwanag-fb-39",
+      "name": "Sofia Mitchell",
+      "email": "sofiamitchell43@gmail.com",
+      "role": "donor",
+      "publicKey": "GADB64XBF2NSP6DXQ52JDVMC2UUB2FGMPTDSR6IM2RGG6GHUJNN25ENE",
+      "feedback": "When I donate via mobile, the Freighter extension opens a new tab and I lose my scroll position."
+    },
+    {
+      "id": "liwanag-fb-40",
+      "name": "Jared Stone",
+      "email": "jaredstonework@gmail.com",
+      "role": "organizer",
+      "publicKey": "GDDNXVOIPBWCQRX45QTEHSOH3WROGVNADTVWH2JMSQY67VVYLFXXD4VO",
+      "feedback": "The on-chain receipt page should link to both the donation tx and the resulting campaign state."
+    },
+    {
+      "id": "liwanag-fb-41",
+      "name": "Kaitlyn Park",
+      "email": "kaitlyn.park@gmail.com",
+      "role": "donor",
+      "publicKey": "GBMBYGP6CEDX76KTSU64F4J2YQXUAUQGMQOOHSL4KWP6IBRCJTHQVQSD",
+      "feedback": "I want to see which organizer wallet receives the disburse before I sign — that should be on the confirmation card."
+    },
+    {
+      "id": "liwanag-fb-42",
+      "name": "Trevor Owens",
+      "email": "t.owens42@gmail.com",
+      "role": "donor",
+      "publicKey": "GAL3S7MRL6LCAU4GZ6AYSIGVZD2IVWET3H65GFWGUZMCVAY6UAFGVZEK",
+      "feedback": "The sign-challenge step from SEP-10 felt opaque until I read the docs."
+    },
+    {
+      "id": "liwanag-fb-43",
+      "name": "Vanessa Cole",
+      "email": "vanessacole63@gmail.com",
+      "role": "donor",
+      "publicKey": "GDBLRN46J5BYXYVJIKGYZK7ZOQEWCGQHEIRWNINJBGG3VRQ5UJDJZVOL",
+      "feedback": "The campaign board polls the contract every few seconds; the timing feels right but I would like a manual refresh too."
+    },
+    {
+      "id": "liwanag-fb-44",
+      "name": "Marcus Webb",
+      "email": "marcus.webb.dev@gmail.com",
+      "role": "donor",
+      "publicKey": "GBNJ3Y5CVM7CVQZS5X7QKGJOXBVGEM4VCDKTCCZHPDIUFNCI6CMKY2LA",
+      "feedback": "A small badge that says \"escrowed by Soroban contract\" near the raised total would build donor trust."
+    },
+    {
+      "id": "liwanag-fb-45",
+      "name": "Elena Vargas",
+      "email": "elenavargas85@gmail.com",
+      "role": "organizer",
+      "publicKey": "GDHDZIXP6JFEYVWY67QTEJSMV5W4KQODZ7FRS5Z2UQ5S3MJJEXLEOXLW",
+      "feedback": "I want to be able to withdraw a campaign before any donations arrive, in case I created it by mistake."
+    },
+    {
+      "id": "liwanag-fb-46",
+      "name": "Joel Armstrong",
+      "email": "joelarmstrongwork@gmail.com",
+      "role": "donor",
+      "publicKey": "GCXYEVFWHM7PHGBXLRGEWBMVFMJRZVWYO4F3CSR2OGRJYJRKGM2OO75I",
+      "feedback": "When the disburse invoke succeeds, the spend ledger should highlight the new row for a few seconds."
+    },
+    {
+      "id": "liwanag-fb-47",
+      "name": "Sabrina Rhodes",
+      "email": "sabrina.rhodes@gmail.com",
+      "role": "donor",
+      "publicKey": "GC4GH74LB4VAVOVAVLFPCGMOLR2M2SPW4R5MMULFV4KO2KFBKOEVLGAH",
+      "feedback": "The Trustline helper should warn me about the base reserve before I sign."
+    },
+    {
+      "id": "liwanag-fb-48",
+      "name": "Derek Patel",
+      "email": "d.patel48@gmail.com",
+      "role": "donor",
+      "publicKey": "GA42GZ4HA26YVHY7GXZHZY5TI2O5YPBGZGNNM4GS2FD7SVBTS7GLNACM",
+      "feedback": "For organizers, a payout history view grouped by campaign would be cleaner than the global spend ledger."
+    },
+    {
+      "id": "liwanag-fb-49",
+      "name": "Naomi Jenkins",
+      "email": "naomijenkins69@gmail.com",
+      "role": "donor",
+      "publicKey": "GAGILZF4LW7KS2KD6W3A2YDURQFA4HPJNXISJ27PX3PWUTBR4NIABFZZ",
+      "feedback": "I would like a hover tooltip on the campaign thermometer that explains what the raised number is sourced from."
+    },
+    {
+      "id": "liwanag-fb-50",
+      "name": "Calvin Ford",
+      "email": "calvin.ford.dev@gmail.com",
+      "role": "organizer",
+      "publicKey": "GADUOD3QTM4RMUWHWWEDYC6Y6D32ZSOINVZNFQ2MQDZKLFS4PPT2OGTS",
+      "feedback": "The recipient address in the disburse modal should be checked against the campaign organizer — flag mismatches."
+    },
+    {
+      "id": "liwanag-fb-51",
+      "name": "Brandon Long",
+      "email": "brandon.long.dev@gmail.com",
+      "role": "donor",
+      "publicKey": "GCSQB6KZMXOBOPHO2MJV74SDL2TP6HIKYFJEYKDYUHOKBTT3DAPX26HJ",
+      "feedback": "Onboarding copy is friendly but the fee disclosure comes too late — flag it on the form, not on confirm."
+    },
+    {
+      "id": "liwanag-fb-52",
+      "name": "Andrew Murphy",
+      "email": "andrewmurphywork@gmail.com",
+      "role": "donor",
+      "publicKey": "GB4YFDKRMAF4Q6QM6YPB5ZKKYBNLPD6NMEHOCWKZG3GDFRSYB4KRIEK4",
+      "feedback": "Dashboard loads fast on mobile but the breakdown labels collapse below 360px — make them two-line wrap."
+    },
+    {
+      "id": "liwanag-fb-53",
+      "name": "Joseph Ramirez",
+      "email": "j.ramirez24@gmail.com",
+      "role": "donor",
+      "publicKey": "GA4BVWV4Q75KVHJEG3V3AAFG4JXJPZUSHBUY7AKFX5SGEYCQDZFETQKA",
+      "feedback": "Friendbot funded in 2s on first try; second stream needed a manual reset. Recover is acceptable but surprising."
+    },
+    {
+      "id": "liwanag-fb-54",
+      "name": "Mia Taylor",
+      "email": "miataylor27@gmail.com",
+      "role": "donor",
+      "publicKey": "GD6VOMSNHLEIO62IGJQABQSAEESZUWFP7S7PHBXM63T3UFLBP7FLX6BI",
+      "feedback": "Wallet context switches too aggressive — I lost the destination address when I swapped from testnet to a sibling panel."
+    },
+    {
+      "id": "liwanag-fb-55",
+      "name": "Derek Patel",
+      "email": "d.patel48@gmail.com",
+      "role": "donor",
+      "publicKey": "GA42GZ4HA26YVHY7GXZHZY5TI2O5YPBGZGNNM4GS2FD7SVBTS7GLNACM",
+      "feedback": "CSV export matches what I see on screen; reviewer-friendly. Add a checksum column for the SHA256 of the payload."
+    },
+    {
+      "id": "liwanag-fb-56",
+      "name": "Alexander Reed",
+      "email": "alexander.reed.dev@gmail.com",
+      "role": "organizer",
+      "publicKey": "GAWA7KBGBJZB4UJE2EGOYY5MIGV3TD3XEY3QN6AN7RC5B6VHB5ASZ2PG",
+      "feedback": "Role selector defaults to the first option. Most reviewers are not senders — flip the default to the safest role."
+    },
+    {
+      "id": "liwanag-fb-57",
+      "name": "Patrick Reyes",
+      "email": "p.reyes36@gmail.com",
+      "role": "donor",
+      "publicKey": "GA6IU65GNYMFSGLQGLNWKC5OLGDACGOPLVZGSJURHHBXI4DGCYHHKMAQ",
+      "feedback": "Tx hash links work in the explorer; please also show the fee charged so I can audit cost per action."
+    },
+    {
+      "id": "liwanag-fb-58",
+      "name": "James Wilson",
+      "email": "j.wilson6@gmail.com",
+      "role": "donor",
+      "publicKey": "GC7CWBRYQZKFKDYZ4ROSIPKFJ4ZT2MA6336AW5I2KDGULQ3WWNLP62JT",
+      "feedback": "Rate limit messaging is unclear. Tell me explicitly: how many calls per minute, and on which endpoint."
+    },
+    {
+      "id": "liwanag-fb-59",
+      "name": "Calvin Ford",
+      "email": "calvin.ford.dev@gmail.com",
+      "role": "organizer",
+      "publicKey": "GADUOD3QTM4RMUWHWWEDYC6Y6D32ZSOINVZNFQ2MQDZKLFS4PPT2OGTS",
+      "feedback": "Form validation rejects spaces in label field silently. Show inline error, not toast that disappears."
+    },
+    {
+      "id": "liwanag-fb-60",
+      "name": "Olivia Price",
+      "email": "oliviaprice57@gmail.com",
+      "role": "donor",
+      "publicKey": "GDT6MSDA7AV5NLJRM34XAOMCHQSUOSJAFTEPJ6UBQVU3URIAV7HJAFYM",
+      "feedback": "Empty state should explain how to continue, not just say \"no data\". Add the next-action CTA right there."
+    },
+    {
+      "id": "liwanag-fb-61",
+      "name": "Brandon Long",
+      "email": "brandon.long.dev@gmail.com",
+      "role": "donor",
+      "publicKey": "GCSQB6KZMXOBOPHO2MJV74SDL2TP6HIKYFJEYKDYUHOKBTT3DAPX26HJ",
+      "feedback": "The charity transparency board should show every donation on a single timeline, not paginated — the whole story is the point."
+    },
+    {
+      "id": "liwanag-fb-62",
+      "name": "Andrew Murphy",
+      "email": "andrewmurphywork@gmail.com",
+      "role": "donor",
+      "publicKey": "GB4YFDKRMAF4Q6QM6YPB5ZKKYBNLPD6NMEHOCWKZG3GDFRSYB4KRIEK4",
+      "feedback": "Donor anonymity toggle is good, but the on-chain proof still shows the wallet — add a true anonymous mode with zero-knowledge."
+    },
+    {
+      "id": "liwanag-fb-63",
+      "name": "Joseph Ramirez",
+      "email": "j.ramirez24@gmail.com",
+      "role": "donor",
+      "publicKey": "GA4BVWV4Q75KVHJEG3V3AAFG4JXJPZUSHBUY7AKFX5SGEYCQDZFETQKA",
+      "feedback": "Charity verification status should be visible on the donation button, not two scrolls down."
+    },
+    {
+      "id": "liwanag-fb-64",
+      "name": "Mia Taylor",
+      "email": "miataylor27@gmail.com",
+      "role": "donor",
+      "publicKey": "GD6VOMSNHLEIO62IGJQABQSAEESZUWFP7S7PHBXM63T3UFLBP7FLX6BI",
+      "feedback": "Recurring donation cancellation is too easy — add a 1-second hold to prevent late-night impulse-cancel."
+    },
+    {
+      "id": "liwanag-fb-65",
+      "name": "Derek Patel",
+      "email": "d.patel48@gmail.com",
+      "role": "donor",
+      "publicKey": "GA42GZ4HA26YVHY7GXZHZY5TI2O5YPBGZGNNM4GS2FD7SVBTS7GLNACM",
+      "feedback": "Charity admin should not be able to spend funds without a board vote — even for small amounts."
+    },
+    {
+      "id": "liwanag-fb-66",
+      "name": "Alexander Reed",
+      "email": "alexander.reed.dev@gmail.com",
+      "role": "organizer",
+      "publicKey": "GAWA7KBGBJZB4UJE2EGOYY5MIGV3TD3XEY3QN6AN7RC5B6VHB5ASZ2PG",
+      "feedback": "The donation receipt PDF should include a QR code linking to the on-chain proof — accountants love this."
+    },
+    {
+      "id": "liwanag-fb-67",
+      "name": "Patrick Reyes",
+      "email": "p.reyes36@gmail.com",
+      "role": "donor",
+      "publicKey": "GA6IU65GNYMFSGLQGLNWKC5OLGDACGOPLVZGSJURHHBXI4DGCYHHKMAQ",
+      "feedback": "Cause selection during donation is a dropdown — make it a searchable list with categories and a \"popular\" badge."
+    },
+    {
+      "id": "liwanag-fb-68",
+      "name": "James Wilson",
+      "email": "j.wilson6@gmail.com",
+      "role": "donor",
+      "publicKey": "GC7CWBRYQZKFKDYZ4ROSIPKFJ4ZT2MA6336AW5I2KDGULQ3WWNLP62JT",
+      "feedback": "Multi-cause split (50% to water, 50% to education) should be a one-click feature, not a manual flow."
+    },
+    {
+      "id": "liwanag-fb-69",
+      "name": "Calvin Ford",
+      "email": "calvin.ford.dev@gmail.com",
+      "role": "organizer",
+      "publicKey": "GADUOD3QTM4RMUWHWWEDYC6Y6D32ZSOINVZNFQ2MQDZKLFS4PPT2OGTS",
+      "feedback": "Donor leaderboard for a cause should default to opt-in — privacy first."
+    },
+    {
+      "id": "liwanag-fb-70",
+      "name": "Olivia Price",
+      "email": "oliviaprice57@gmail.com",
+      "role": "donor",
+      "publicKey": "GDT6MSDA7AV5NLJRM34XAOMCHQSUOSJAFTEPJ6UBQVU3URIAV7HJAFYM",
+      "feedback": "Charity campaign end date should be visible, and post-end donations should auto-route to similar live causes."
+    }
+  ],
+  "sheetResponseExportUrl": "https://docs.google.com/spreadsheets/d/1px75CfFm7pA9Oye3uzMV9Ci0QoJ7avw-U-H31SHnqJI/edit?usp=drivesdk",
+  "formUrl": "https://docs.google.com/forms/d/e/1FAIpQLSddlk3smV3oGofa1G40_3l1bNiBme8uaLnlJM-kNkIKj0ia-g/viewform"
+}
