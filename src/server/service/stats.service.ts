@@ -1,8 +1,7 @@
-import { count, countDistinct, notInArray, sql } from 'drizzle-orm';
+import { count, countDistinct, notInArray, sql, sum } from 'drizzle-orm';
 import { env } from '@/server/config/env';
 import { db } from '@/server/db/client';
 import { campaigns, donations, sessions, spendItems } from '@/server/db/schema';
-import { addAmounts } from '@/server/lib/money';
 
 export interface PublicStats {
   uniqueWallets: number;
@@ -33,13 +32,11 @@ export async function getPublicStats(): Promise<PublicStats> {
   const [donationRow] = await db.select({ value: count() }).from(donations);
   const [payoutRow] = await db.select({ value: count() }).from(spendItems);
 
-  // Sum XLM donations only (asset = 'XLM') for a headline raised figure.
-  const xlmDonations = await db
-    .select({ amount: donations.amount })
+  const [xlmRow] = await db
+    .select({ total: sum(donations.amount) })
     .from(donations)
     .where(sql`${donations.asset} = 'XLM'`);
-  let totalRaisedXlm = '0';
-  for (const d of xlmDonations) totalRaisedXlm = addAmounts(totalRaisedXlm, d.amount);
+  const totalRaisedXlm = xlmRow?.total ?? '0';
 
   return {
     uniqueWallets: walletRow?.value ?? 0,
