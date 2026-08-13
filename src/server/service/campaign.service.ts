@@ -28,24 +28,27 @@ export async function updateRaisedAmount(id: string, amount: string): Promise<vo
   const campaign = await getCampaignById(id);
   if (!campaign) throw new Error('Campaign not found');
   const newRaised = addAmounts(campaign.raisedAmount, amount);
-  await db
+  const result = await db
     .update(campaigns)
     .set({ raisedAmount: newRaised, updatedAt: new Date() })
     .where(eq(campaigns.id, id));
+  if (result.rowCount === 0) throw new Error('Failed to update campaign raised amount');
 }
 
 /** Set the raised total from the contract's authoritative on-chain figure. */
 export async function setRaisedAmount(id: string, raised: string): Promise<void> {
-  await db
+  const result = await db
     .update(campaigns)
     .set({ raisedAmount: raised, updatedAt: new Date() })
     .where(eq(campaigns.id, id));
+  if (result.rowCount === 0) throw new Error('Campaign not found when setting raised amount');
 }
 
 /** Mark a campaign as opened on-chain once open_campaign confirms. */
 export async function markCampaignOpened(id: string, openTxHash: string): Promise<void> {
-  await db
+  const result = await db
     .update(campaigns)
     .set({ status: 'active', openTxHash, updatedAt: new Date() })
     .where(eq(campaigns.id, id));
+  if (result.rowCount === 0) throw new Error('Campaign not found when marking opened');
 }
