@@ -26,9 +26,13 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ id:
     }
 
     const { hash } = await submit(signedXdr);
-    // Ensure the campaign is queryable on-chain before we report it live, so the
-    // donor's very next `donate` build doesn't race the open's confirmation.
-    await waitForCampaignReadable(id);
+    const readable = await waitForCampaignReadable(id);
+    if (!readable) {
+      return NextResponse.json(
+        { error: 'Campaign opened on-chain but remained unreadable; please retry' },
+        { status: 503 },
+      );
+    }
     await markCampaignOpened(id, hash);
     const updated = await getCampaignById(id);
     return NextResponse.json({ campaign: updated, txHash: hash }, { status: 201 });
