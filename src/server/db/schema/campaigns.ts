@@ -15,7 +15,7 @@ export const campaigns = pgTable('campaigns', {
   // Soroban tx hash of open_campaign — proof the campaign exists on-chain.
   openTxHash: text('open_tx_hash'),
   // 'pending_chain' until open_campaign confirms, then 'active', then 'closed'.
-  status: text('status').notNull().default('active'),
+  status: text('status').notNull().default('pending_chain'),
   category: text('category').notNull().default('disaster-relief'),
   createdAt: timestamp('created_at').notNull().defaultNow(),
   updatedAt: timestamp('updated_at').notNull().defaultNow(),
