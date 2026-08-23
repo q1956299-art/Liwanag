@@ -9,7 +9,7 @@ export default defineConfig({
   },
   // Scope push to this project's tables only — the dev DB is shared across
   // hackathon projects, so an unscoped push would try to drop unrelated tables.
-  tablesFilter: ['campaigns', 'donations', 'spend_items', 'liwanag_sessions'],
+  tablesFilter: ['campaigns', 'donations', 'spend_items', 'sessions'],
   strict: true,
   verbose: true,
 });

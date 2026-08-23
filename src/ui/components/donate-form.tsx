@@ -8,8 +8,6 @@ import { isValidAmount } from '@/server/lib/money';
 import { EnableUsdcButton } from './enable-usdc-button';
 import { shorten, useWallet } from '@/ui/wallet/wallet-context';
 
-const STELLAR_NETWORK = process.env.NEXT_PUBLIC_STELLAR_NETWORK ?? 'public';
-
 interface Props {
   campaignId: string;
   campaignName: string;
@@ -82,7 +80,7 @@ export function DonateForm({ campaignId, campaignName, asset: campaignAsset, con
           {amount} {asset} is now part of this campaign’s public ledger.
         </p>
         <a
-          href={`https://stellar.expert/explorer/${STELLAR_NETWORK === 'public' ? 'public' : 'testnet'}/tx/${result.txHash}`}
+          href={`https://stellar.expert/explorer/mainnet/tx/${result.txHash}`}
           target="_blank"
           rel="noopener noreferrer"
           className="mono mt-4 inline-flex items-center gap-1.5 break-all rounded-lg bg-[oklch(96%_0.01_80)] px-3 py-2 text-xs text-[var(--color-primary)] hover:underline"

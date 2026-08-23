@@ -1,8 +1,9 @@
-import { count, countDistinct, notInArray, sql, sum } from 'drizzle-orm';
-import { readPoolBalanceStroops } from '@/server/stellar/soroban';
+import { count, countDistinct, notInArray, sql } from 'drizzle-orm';
 import { env } from '@/server/config/env';
 import { db } from '@/server/db/client';
 import { campaigns, donations, sessions, spendItems } from '@/server/db/schema';
+import { addAmounts } from '@/server/lib/money';
+import { readPoolBalanceStroops } from '@/server/stellar/soroban';
 
 export interface PublicStats {
   uniqueWallets: number;
@@ -14,14 +15,13 @@ export interface PublicStats {
   poolBalanceXlm: string;
 }
 
-const demo = env.DEMO_ADDRESSES;
-
-function formatXlmFourDp(stroopsText: string): string {
-  const stroops = BigInt(stroopsText);
+function formatXlm4dp(stroops: bigint): string {
   const whole = stroops / 10_000_000n;
-  const frac = ((stroops % 10_000_000n) / 1000n).toString().padStart(4, '0');
-  return `${whole}.${frac}`;
+  const frac4 = (stroops % 10_000_000n).toString().padStart(7, '0').slice(0, 4);
+  return `${whole}.${frac4}`;
 }
+
+const demo = env.DEMO_ADDRESSES;
 
 /** Real interaction counts. Demo/seed wallets excluded from wallet + login counts. */
 export async function getPublicStats(): Promise<PublicStats> {
@@ -41,18 +41,19 @@ export async function getPublicStats(): Promise<PublicStats> {
   const [donationRow] = await db.select({ value: count() }).from(donations);
   const [payoutRow] = await db.select({ value: count() }).from(spendItems);
 
-  const [xlmRow] = await db
-    .select({ total: sum(donations.amount) })
+  // Sum XLM donations only (asset = 'XLM') for a headline raised figure.
+  const xlmDonations = await db
+    .select({ amount: donations.amount })
     .from(donations)
     .where(sql`${donations.asset} = 'XLM'`);
-  const totalRaisedXlm = xlmRow?.total ?? '0';
+  let totalRaisedXlm = '0';
+  for (const d of xlmDonations) totalRaisedXlm = addAmounts(totalRaisedXlm, d.amount);
 
   let poolBalanceXlm = '0.0000';
   try {
-    const stroops = await readPoolBalanceStroops();
-    poolBalanceXlm = formatXlmFourDp(stroops);
+    poolBalanceXlm = formatXlm4dp(BigInt(await readPoolBalanceStroops()));
   } catch {
-    poolBalanceXlm = '0.0000';
+    /* keep '0.0000' */
   }
 
   return {

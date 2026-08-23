@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { env } from '@/server/config/env';
 import { LiwanagMark } from './logo';
 
 export function Footer() {
@@ -26,7 +25,7 @@ export function Footer() {
             Start a campaign
           </Link>
           <a
-            href={`https://stellar.expert/explorer/${env.STELLAR_NETWORK === 'public' ? 'public' : 'testnet'}`}
+            href="https://stellar.expert/explorer/testnet"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-[var(--color-ink)]"

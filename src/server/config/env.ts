@@ -25,11 +25,6 @@ export const env = {
     'XLM_SAC_CONTRACT_ID',
     'CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47ZG2FB2RMQQVU2HHGCYSC',
   ),
-  // Liwanag app contract address whose on-chain XLM pool balance we surface.
-  APP_CONTRACT_ID: getEnv(
-    'APP_CONTRACT_ID',
-    'CCYGCJKHCPTDWOIOVXLW2NNSPOJGUJMAAF7AMIWSPXIJ5PZVXERHZG2V',
-  ),
   // Comma-separated wallet addresses excluded from public stats counts.
   DEMO_ADDRESSES: (process.env.DEMO_ADDRESSES ?? '')
     .split(',')

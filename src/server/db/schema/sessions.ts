@@ -1,6 +1,6 @@
 import { pgTable, text, timestamp, uuid } from 'drizzle-orm/pg-core';
 
-export const sessions = pgTable('liwanag_sessions', {
+export const sessions = pgTable('sessions', {
   id: uuid('id').primaryKey().defaultRandom(),
   // The wallet address that authenticated via SEP-10.
   publicKey: text('public_key').notNull(),

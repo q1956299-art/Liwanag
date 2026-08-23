@@ -21,13 +21,11 @@ export function isValidAsset(value: unknown): value is AssetId {
   return value === 'XLM' || value === 'USDC';
 }
 
-const EXPLORER_NETWORK = env.STELLAR_NETWORK === 'public' ? 'public' : 'testnet';
-
 /** Stroop-based fee/balance helpers handled by money.ts; this keeps explorer links. */
 export function txExplorerUrl(hash: string): string {
-  return `https://stellar.expert/explorer/${EXPLORER_NETWORK}/tx/${hash}`;
+  return `https://stellar.expert/explorer/testnet/tx/${hash}`;
 }
 
 export function accountExplorerUrl(account: string): string {
-  return `https://stellar.expert/explorer/${EXPLORER_NETWORK}/account/${account}`;
+  return `https://stellar.expert/explorer/testnet/account/${account}`;
 }
