@@ -15,6 +15,7 @@ export default async function StatsPage() {
     { label: 'Campaigns', value: stats.campaigns, icon: HeartHandshake, hint: 'Fundraisers created on Liwanag' },
     { label: 'Donations', value: stats.donations, icon: Coins, hint: 'On-chain gifts recorded' },
     { label: 'On-chain payouts', value: stats.payouts, icon: Receipt, hint: 'Disbursements signed from campaign wallets' },
+    { label: 'Pool balance (on-chain)', value: `${stats.poolBalanceXlm} XLM`, icon: Wallet, hint: 'Live XLM balance held by the Liwanag app contract on mainnet' },
   ];
 
   return (

@@ -249,6 +249,33 @@ export interface OnchainCampaign {
   status: 'Active' | 'Closed';
 }
 
+const XLM_SAC_MAINNET_ID = 'CAS3J7GYLGXMF6TDJBBYYSE3HQ6BBSMLNUQ34T6TZMYMW2EVH34XOWMA';
+
+/** Read the on-chain XLM pool balance of the app contract via simulation. Returns i128 stroops as a decimal string, '0' on any failure. */
+export async function readPoolBalanceStroops(): Promise<string> {
+  try {
+    const srv = server();
+    const account = new Account(Keypair.random().publicKey(), '0');
+    const tx = new TransactionBuilder(account, {
+      fee: BASE_FEE,
+      networkPassphrase: PASSPHRASE,
+    })
+      .addOperation(
+        new Contract(XLM_SAC_MAINNET_ID).call(
+          'balance',
+          new Address(env.APP_CONTRACT_ID).toScVal(),
+        ),
+      )
+      .setTimeout(60)
+      .build();
+    const sim = await srv.simulateTransaction(tx);
+    if (rpc.Api.isSimulationError(sim) || !sim.result?.retval) return '0';
+    return BigInt(scValToNative(sim.result.retval) as bigint | number | string).toString();
+  } catch {
+    return '0';
+  }
+}
+
 /** Read a campaign's live on-chain state via simulation (no fee, no signature). */
 export async function readCampaign(campaignUuid: string): Promise<OnchainCampaign | null> {
   const srv = server();
