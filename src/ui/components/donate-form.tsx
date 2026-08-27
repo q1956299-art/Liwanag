@@ -5,8 +5,12 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { toast } from 'sonner';
 import { isValidAmount } from '@/server/lib/money';
-import { EnableUsdcButton } from './enable-usdc-button';
 import { shorten, useWallet } from '@/ui/wallet/wallet-context';
+import { EnableUsdcButton } from './enable-usdc-button';
+
+const EXPLORER_NETWORK =
+  process.env.NEXT_PUBLIC_STELLAR_NETWORK === 'public' ? 'public' : 'testnet';
+const EXPLORER_BASE_URL = `https://stellar.expert/explorer/${EXPLORER_NETWORK}`;
 
 interface Props {
   campaignId: string;
@@ -52,7 +56,13 @@ export function DonateForm({ campaignId, campaignName, asset: campaignAsset, con
       const subRes = await fetch('/api/donations/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ campaignId, signedXdr: signed, donorAddress: donor, amount, message }),
+        body: JSON.stringify({
+          campaignId,
+          signedXdr: signed,
+          donorAddress: donor,
+          amount,
+          message,
+        }),
       });
       const sub = await subRes.json();
       if (!subRes.ok) throw new Error(sub.error ?? 'Donation failed on-chain');
@@ -63,7 +73,8 @@ export function DonateForm({ campaignId, campaignName, asset: campaignAsset, con
       });
     } catch (err) {
       const msg = err instanceof Error ? err.message : 'Something went wrong';
-      if (!/user (declined|rejected)/i.test(msg)) toast.error('Donation failed', { description: msg });
+      if (!/user (declined|rejected)/i.test(msg))
+        toast.error('Donation failed', { description: msg });
     } finally {
       setLoading(false);
     }
@@ -75,12 +86,14 @@ export function DonateForm({ campaignId, campaignName, asset: campaignAsset, con
         <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-[var(--color-verify-soft)]">
           <CheckCircle2 className="h-7 w-7 text-[var(--color-verify)]" />
         </div>
-        <h2 className="font-display text-2xl font-semibold text-[var(--color-ink)]">Donation confirmed</h2>
+        <h2 className="font-display text-2xl font-semibold text-[var(--color-ink)]">
+          Donation confirmed
+        </h2>
         <p className="mt-2 text-[var(--color-muted)]">
           {amount} {asset} is now part of this campaign’s public ledger.
         </p>
         <a
-          href={`https://stellar.expert/explorer/mainnet/tx/${result.txHash}`}
+          href={`${EXPLORER_BASE_URL}/tx/${result.txHash}`}
           target="_blank"
           rel="noopener noreferrer"
           className="mono mt-4 inline-flex items-center gap-1.5 break-all rounded-lg bg-[oklch(96%_0.01_80)] px-3 py-2 text-xs text-[var(--color-primary)] hover:underline"
@@ -188,7 +201,11 @@ export function DonateForm({ campaignId, campaignName, asset: campaignAsset, con
         </p>
       </div>
 
-      <button type="submit" disabled={loading || connecting} className="btn-primary w-full px-6 py-4 text-base">
+      <button
+        type="submit"
+        disabled={loading || connecting}
+        className="btn-primary w-full px-6 py-4 text-base"
+      >
         {loading || connecting ? (
           <Loader2 className="h-5 w-5 animate-spin" />
         ) : address ? (
@@ -203,7 +220,8 @@ export function DonateForm({ campaignId, campaignName, asset: campaignAsset, con
             : 'Connect wallet to donate'}
       </button>
       <p className="text-center text-xs text-[var(--color-muted)]">
-        You’ll review and sign the payment in Freighter. Network is pinned to Stellar mainnet.
+        You’ll review and sign the payment in Freighter. Network is pinned to Stellar{' '}
+        {EXPLORER_NETWORK}.
       </p>
     </form>
   );

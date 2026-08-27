@@ -1,6 +1,5 @@
 import { Asset, Horizon } from '@stellar/stellar-sdk';
-import { env } from '@/server/config/env';
-import { publicEnv } from '@/server/config/env';
+import { env, publicEnv } from '@/server/config/env';
 
 export const HORIZON_URL = env.STELLAR_HORIZON_URL;
 export const NETWORK_PASSPHRASE = env.STELLAR_NETWORK_PASSPHRASE;
@@ -22,10 +21,14 @@ export function isValidAsset(value: unknown): value is AssetId {
 }
 
 /** Stroop-based fee/balance helpers handled by money.ts; this keeps explorer links. */
+function explorerNetwork(): 'public' | 'testnet' {
+  return env.STELLAR_NETWORK === 'public' ? 'public' : 'testnet';
+}
+
 export function txExplorerUrl(hash: string): string {
-  return `https://stellar.expert/explorer/testnet/tx/${hash}`;
+  return `https://stellar.expert/explorer/${explorerNetwork()}/tx/${hash}`;
 }
 
 export function accountExplorerUrl(account: string): string {
-  return `https://stellar.expert/explorer/testnet/account/${account}`;
+  return `https://stellar.expert/explorer/${explorerNetwork()}/account/${account}`;
 }

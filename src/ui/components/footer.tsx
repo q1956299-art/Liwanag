@@ -1,6 +1,9 @@
 import Link from 'next/link';
 import { LiwanagMark } from './logo';
 
+const EXPLORER_NETWORK =
+  process.env.NEXT_PUBLIC_STELLAR_NETWORK === 'public' ? 'public' : 'testnet';
+
 export function Footer() {
   return (
     <footer className="border-t border-[var(--color-line)] bg-[var(--color-card)]">
@@ -10,7 +13,8 @@ export function Footer() {
           <div className="text-sm">
             <div className="font-display font-semibold text-[var(--color-ink)]">Liwanag</div>
             <div className="text-xs text-[var(--color-muted)]">
-              Charity money, brought to light · Stellar mainnet
+              Charity money, brought to light · Stellar{' '}
+              {EXPLORER_NETWORK === 'public' ? 'mainnet' : 'testnet'}
             </div>
           </div>
         </div>
@@ -25,7 +29,7 @@ export function Footer() {
             Start a campaign
           </Link>
           <a
-            href="https://stellar.expert/explorer/testnet"
+            href={`https://stellar.expert/explorer/${EXPLORER_NETWORK}`}
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-[var(--color-ink)]"
