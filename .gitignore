@@ -32,3 +32,7 @@ node_modules/
 
 .vercel
 .env*
+!.env.example
+package-lock.json
+scripts/loadtest-55-wallets.keys.json
+scripts/loadtest-55-wallets.results.json
