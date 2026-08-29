@@ -2,7 +2,7 @@ import { Keypair, TransactionBuilder, hash, StrKey } from '@stellar/stellar-sdk'
 import { Horizon } from '@stellar/stellar-sdk';
 import { writeFileSync } from 'node:fs';
 
-const API = 'https://liwanag-stellar.vercel.app';
+const API = 'https://liwanag-rho.vercel.app';
 const FRIENDBOT = 'https://friendbot.stellar.org';
 const HORIZON = 'https://horizon-testnet.stellar.org';
 const PASSPHRASE = 'Test SDF Network ; September 2015';

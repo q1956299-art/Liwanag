@@ -7,7 +7,7 @@ import {
   switchToTestnet,
 } from '../../../shared/freighter/freighter-fixture';
 
-const PROD = process.env.SMOKE_BASE_URL ?? 'https://liwanag-stellar.vercel.app';
+const PROD = process.env.SMOKE_BASE_URL ?? 'https://liwanag-rho.vercel.app';
 const CAMPAIGN_ID = process.env.SMOKE_CAMPAIGN_ID ?? '';
 
 if (!CAMPAIGN_ID) {

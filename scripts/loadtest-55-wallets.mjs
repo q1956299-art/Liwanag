@@ -17,7 +17,7 @@ import { setTimeout as sleep } from 'node:timers/promises';
 import { writeFileSync } from 'node:fs';
 import { Keypair, TransactionBuilder } from '@stellar/stellar-sdk';
 
-const API = process.env.LIWANAG_API ?? 'https://liwanag-stellar.vercel.app';
+const API = process.env.LIWANAG_API ?? 'https://liwanag-rho.vercel.app';
 const FRIENDBOT = 'https://friendbot.stellar.org';
 const PASSPHRASE = 'Test SDF Network ; September 2015';
 const CAMPAIGN_ID = process.env.SMOKE_CAMPAIGN_ID ?? '';
@@ -95,7 +95,7 @@ async function main() {
         if (r.status !== 200 || !r.body.xdr) return { ok: false, phase: 'build', status: r.status, err: r.body.error ?? 'no xdr', ms: Date.now() - t0 };
         const tx = TransactionBuilder.fromXDR(r.body.xdr, PASSPHRASE);
         tx.sign(k);
-        return { ok: true, phase: 'build', status: r.status, xdr: tx.toXDR(), ms: Date.now() - t0 };
+        return { ok: true, phase: 'build', status: r.status, xdr: tx.toXDR(), donorAddress: k.publicKey(), ms: Date.now() - t0 };
       } catch (e) {
         return { ok: false, phase: 'build', err: e instanceof Error ? e.message : String(e), ms: Date.now() - t0 };
       }
@@ -113,7 +113,7 @@ async function main() {
         const res = await fetchJson(`${API}/api/donations/submit`, {
           method: 'POST',
           headers: { 'content-type': 'application/json' },
-          body: JSON.stringify({ signedXdr: r.xdr, campaignId: CAMPAIGN_ID, donorAddress: '', amount: '1' }),
+          body: JSON.stringify({ signedXdr: r.xdr, campaignId: CAMPAIGN_ID, donorAddress: r.donorAddress, amount: '1' }),
         });
         return { ok: res.status === 201, phase: 'submit', status: res.status, txHash: res.body.txHash, err: res.body.error, ms: Date.now() - t0 };
       } catch (e) {
