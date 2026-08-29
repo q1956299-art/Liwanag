@@ -70,3 +70,12 @@ Net: I cannot create the target campaign without a working SEP-10 path, and ther
 - Soroban RPC: `https://soroban-testnet.stellar.org`
 - Home domain: `liwanag.app`
 - Deployed signing pubkey (claimed by challenge XDR): `GCQPFNJBNHH2ZQ5PLMCQW2WRALX3CCNB5YQOA4W26IEBMYW2C3KMTDYN`
+## 2026-08-29 retry — second observation
+
+Re-ran `scripts/setup-active-campaign.ts` end-to-end this session. The blocker reproduces, but with an additional signal:
+
+- With client-side passphrase = `Test SDF Network ; September 2015`, `POST /api/auth/verify` returns `401 {"error":"Invalid wallet signature"}` even when the same SDK round-trips successfully locally (the client-attached signature verifies against the challenge hash on the *same* Node process that signed it).
+- With client-side passphrase = `Public Global Stellar Network ; September 2015`, the same call returns `{wallet: …}` (200, session cookie set). The Soroban tx hash embedded in `TransactionEnvelope` is bound to the *passphrase* the client used to build/sign, which means the deployed server is signing/verifying against the **mainnet** passphrase hash.
+- After successful verify, `POST /api/campaigns` creates a DB row (`status="pending_chain"`, hidden from `GET /api/campaigns`). `POST /api/campaigns/<id>/open/build` then fails: `Account not found: <organizer>` — the server's Soroban RPC `getAccount` for the freshly Friendbot-funded testnet organizer returns "not found", i.e. the RPC endpoint configured in prod is **not** the testnet RPC, so the second precondition (Soroban network) is also unmet.
+
+In short: two env vars (`STELLAR_NETWORK_PASSPHRASE` and `SOROBAN_RPC_URL`) are out of sync with the testnet contract + Horizon URL. Both must be flipped together; flipping only the passphrase is not enough.
