@@ -3,6 +3,22 @@
 **Date:** 2026-08-29
 **Target:** https://liwanag-stellar.vercel.app (Stellar testnet, contract `CC5KFZ6KLISPHYCA47SVKJNF52KKMLHQ2JGADTSOGNNX4W345G7WJ6CA`)
 
+## Re-verification on 2026-08-29
+
+A second pass was run after the initial scaffold commit. The blocker still reproduces byte-exact:
+
+```
+$ SMOKE_CAMPAIGN_ID=dummy xvfb-run -a ./node_modules/.bin/tsx scripts/testnet-smoke.mts
+SMOKE_FAIL: locator.waitFor: Timeout 30000ms exceeded.
+  - waiting for getByRole('button', { name: /donate/i }).first() to be visible
+```
+
+The Donate button never appears because `GET /api/campaigns` still returns `[]` — no active XLM campaign exists on the deployed contract, so no `/campaigns/<id>` route resolves to a detail page with the donate CTA.
+
+## Direct SEP-10 repro (Node, `@stellar/stellar-sdk@15.1.0`)
+
+Same as the initial run: challenge source = `GCQPFNJBNHH2ZQ5PLMCQW2WRALX3CCNB5YQOA4W26IEBMYW2C3KMTDYN`, but `Keypair.fromPublicKey(source).verify(tx.hash(), sig[0])` returns `false`. Server-attached signature is invalid against the source it claims, so `verifyChallenge` cannot complete and the session wallet cannot be established.
+
 ## Status: BLOCKED — campaign open path broken on prod
 
 The test never executed. Step 0 (ensure an active XLM campaign) and Step 1 (Playwright smoke) both require an active campaign on the deployed contract. Both routes that open a campaign require a SEP-10 authenticated wallet session (`getSessionWallet()`), which in turn requires `POST /api/auth/challenge` + `POST /api/auth/verify`.

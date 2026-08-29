@@ -5,7 +5,7 @@ import {
   launchWithFreighter,
   onboardFreighter,
   switchToTestnet,
-} from '../../shared/freighter/freighter-fixture';
+} from '../../../shared/freighter/freighter-fixture';
 
 const PROD = process.env.SMOKE_BASE_URL ?? 'https://liwanag-stellar.vercel.app';
 const CAMPAIGN_ID = process.env.SMOKE_CAMPAIGN_ID ?? '';
